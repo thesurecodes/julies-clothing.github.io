@@ -23,17 +23,17 @@
             },
             {
                 id: 4,
-                title: "Classic Denim Jacket",
+                title: "Green Corset",
                 category: "women",
                 price: 99.99,
-                image: "img/African dress _ Ankara dress _ African clothing _ African dresses _ African wedding dress _ Afric_ (1).jpeg"
+                image: "img/greencorsetankara.jpeg"
             },
             {
                 id: 5,
-                title: "Floral Summer Blouse",
+                title: "Beaded Ankara corset",
                 category: "women",
                 price: 79.99,
-                image: "img/Ama Corset Gown _ African lace gown _ Nigerian women’s fashion, Traditional wedding attire _ Regal evening outfit _ Elegant celebration dress -.jpeg"
+                image: "img/beadedankaracorset.jpeg"
             },
             {
                 id: 6,
@@ -44,17 +44,17 @@
             },
             {
                 id: 7,
-                title: "Wool Blend Sweater",
+                title: "Ankara Dress Gold",
                 category: "women",
                 price: 119.99,
-                image: "img/Bella Wedding Outfit   - Nigerian Wedding, Court Wedding, African Dress, Bridal Gown.jpeg"
+                image: "img/ankaradressgold.jpeg"
             },
             {
                 id: 8,
-                title: "High-Waist Trousers",
+                title: "Blank Dress",
                 category: "women",
                 price: 89.99,
-                image: "img/Khadija Beaded Dress  - Nigerian Wedding, Igbo Wedding, African Wedding, Yoruba Wedding.jpeg"
+                image: "img/blackankaradress.jpeg"
             },
             {
                 id: 9,
@@ -75,7 +75,7 @@
                 title: "Designer Blazer",
                 category: "women",
                 price: 159.99,
-                image: "img/Khadija Beaded Dress  - Nigerian Wedding, Igbo Wedding, African Wedding, Yoruba Wedding.jpeg"
+                image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
             },
             {
                 id: 12,
@@ -373,5 +373,4 @@ window.location.href = mailto;
         document.addEventListener('DOMContentLoaded', function() {
             renderProducts();
             updateCartCount();
-
         });
