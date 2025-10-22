@@ -12,7 +12,7 @@
                 title: "Elegant Silk Dress",
                 category: "women",
                 price: 189.99,
-                image: "img/africanprintwithred.jpeg"
+                image: "../img/africanprintwithred.jpeg"
             },
             {
                 id: 3,
@@ -374,3 +374,4 @@ window.location.href = mailto;
             renderProducts();
             updateCartCount();
         });
+
