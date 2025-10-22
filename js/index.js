@@ -26,7 +26,7 @@
                 title: "Green Corset",
                 category: "women",
                 price: 99.99,
-                image: "../img/greencorsetankara.jpeg"
+                image: "/img/img/greencorsetankara.jpeg"
             },
             {
                 id: 5,
@@ -374,5 +374,6 @@ window.location.href = mailto;
             renderProducts();
             updateCartCount();
         });
+
 
 
