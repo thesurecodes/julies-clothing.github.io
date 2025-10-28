@@ -212,28 +212,40 @@
  /* Hero Section */
  .hero {
      height: 100vh;
-     background: #000;
      display: flex;
      align-items: center;
      justify-content: center;
      text-align: center;
      position: relative;
      overflow: hidden;
+     background: black;
  }
 
- .hero-bg {
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
-     opacity: 0.7;
- }
+
+  .hero video {
+      position: absolute;
+      top: 62%;
+      bottom: auto;
+      left: 50%;
+      width: 300%;
+      max-width: 90%;
+      /* Even larger */
+      height: 100%;
+      /* Full height */
+      object-fit: contain;
+      background: black;
+      z-index: 1;
+      opacity: 0.7;
+      transform: translate(-50%, -50%);
+      max-width: 1400px;
+      /* Optional: prevent it from getting too large on big screens */
+  }
+
+ 
 
  .hero-content {
      position: relative;
-     z-index: 2;
+     z-index: 3;
      color: white;
      max-width: 700px;
      padding: 0 2rem;
