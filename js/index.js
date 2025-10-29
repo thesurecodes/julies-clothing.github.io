@@ -4,7 +4,7 @@
             {
                 id: 1,
                 title: "Premium Cotton T-Shirt",
-                category: "men",
+                category: "women",
                 price: 59.99,
                 image: "img/africanjacket.jpeg" },
             {
@@ -12,7 +12,7 @@
                 title: "Elegant Silk Dress",
                 category: "women",
                 price: 189.99,
-                image: "img/africanprintwithred.jpeg"
+                image: "/img/africanprintwithred.jpeg"
             },
             {
                 id: 3,
@@ -66,7 +66,7 @@
             {
                 id: 10,
                 title: "Casual Polo Shirt",
-                category: "men",
+                category: "women",
                 price: 69.99,
                 image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
             },
@@ -80,7 +80,7 @@
             {
                 id: 12,
                 title: "Premium Backpack",
-                category: "accessories",
+                category: "women",
                 price: 149.99,
                 image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
             }
@@ -88,32 +88,63 @@
         //Place order.
             const vendorPhone = "2348037200186"; 
     const vendorEmail = "kachifortune4@gmail.com"; 
+
+    function getSelectedOutfits() {
+      const checkboxes = document.querySelectorAll('input[name="outfit"]:checked');
+      const selected = Array.from(checkboxes).map(cb => cb.value);
+      return selected.length > 0 ? selected.join(", ") : null;
+    }
  
     function sendWhatsApp() { 
-      const name = document.getElementById("name").value; 
-      const outfit = document.getElementById("outfit").value; 
-      const color = document.getElementById("color").value; 
-      const size = document.getElementById("size").value; 
-      const notes = document.getElementById("notes").value; 
+      const name = document.getElementById("name").value.trim(); 
+      const outfits = getSelectedOutfits(); 
+      const color = document.getElementById("color").value.trim(); 
+      const size = document.getElementById("size").value.trim(); 
+      const notes = document.getElementById("notes").value.trim(); 
+
+         if (!name || !outfits || !color || !size) {
+        alert("Please fill in all required fields and select at least one outfit.");
+        return;
+      }
  
-      const message = `Hello Fortune Stitches,%0AI'm ${name}.%0AI'd like to order the 
-${outfit}.%0AColor: ${color}%0ASize: ${size}%0AExtra details: ${notes}`; 
-      const url = `https://wa.me/${vendorPhone}?text=${message}`; 
-      window.open(url, "_blank"); 
-    } 
+            const message = 
+        `Hello Julies Clothing,
+        I'm ${name}.
+        I'd like to order the following:
+        Outfit(s): ${outfits}
+        Color(s): ${color}
+        Size(s): ${size}
+        Extra details: ${notes || "None"}`;
+
+        const url = `https://wa.me/${vendorPhone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
  
     function sendEmail() { 
-      const name = document.getElementById("name").value; 
-      const outfit = document.getElementById("outfit").value; 
-      const color = document.getElementById("color").value; 
-      const size = document.getElementById("size").value; 
-      const notes = document.getElementById("notes").value; 
+      const name = document.getElementById("name").value.trim(); 
+       const outfits = getSelectedOutfits(); 
+      const color = document.getElementById("color").value.trim(); 
+      const size = document.getElementById("size").value.trim(); 
+      const notes = document.getElementById("notes").value.trim(); 
+
+      if (!name || !outfits || !color || !size) {
+        alert("Please fill in all required fields and select at least one outfit.");
+        return;
+      }
+
  
-const subject = encodeURIComponent(`New Order from ${name}`); 
-const body = encodeURIComponent(`Outfit: ${outfit}\nColor: ${color}\nSize: ${size}\nNotes: 
-${notes}`); 
-const mailto = `mailto:${vendorEmail                                                                                                                                                            }?subject=${subject}&body=${body}`; 
-window.location.href = mailto; 
+        const subject = encodeURIComponent(`New Order from ${name}`);
+            const body = encodeURIComponent(
+        `Outfit(s): ${outfits}
+        Color(s): ${color}
+        Size(s): ${size}
+        Notes: ${notes || "None"}`
+            );
+
+      const mailto = `mailto:${vendorEmail}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+
 } 
 //end.
 
