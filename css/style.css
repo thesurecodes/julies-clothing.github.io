@@ -86,6 +86,7 @@
      gap: 1rem;
  }
 
+/* === Order Section === */
 .order {
     background-color: #fff;
     padding: 60px 20px;
@@ -96,6 +97,7 @@
     margin: 80px auto;
 }
 
+
 #order h2 {
     font-size: 28px;
     font-weight: 700;
@@ -103,7 +105,8 @@
     color: #000;
 }
 
-/* Form Layout */
+
+/* === Form Layout === */
 .order-form {
     display: flex;
     flex-direction: column;
@@ -111,7 +114,8 @@
     align-items: center;
 }
 
-/* Label styling */
+
+/* === Label Styling === */
 .order-form label {
     font-weight: 600;
     color: #333;
@@ -119,8 +123,9 @@
     margin-left: 10%;
 }
 
-/* Inputs, Selects, Textareas */
-.order-form input,
+
+/* === Inputs, Selects, Textareas === */
+.order-form input[type="text"],
 .order-form select,
 .order-form textarea {
     width: 80%;
@@ -132,6 +137,7 @@
     transition: border-color 0.3s ease;
 }
 
+
 .order-form input:focus,
 .order-form select:focus,
 .order-form textarea:focus {
@@ -139,7 +145,89 @@
     outline: none;
 }
 
-/* Buttons */
+
+/* === Outfit Options (Checkbox Section) === */
+
+.outfit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.outfit-items{
+    position: relative;
+}
+.outfit-items input[type= "checkbox"]{
+    display: none;
+}
+ 
+.outfit-items
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 16px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+.outfit-items input[type="checkbox"]:checked+label {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* #outfit-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+
+.outfit-ite, label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 16px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+#outfit-options input[type="checkbox"] {
+    display: none;
+}
+
+
+#outfit-options input[type="checkbox"]:checked+label {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    transform: scale(1.03);
+} */
+
+
+/* === Buttons === */
 .order-form button {
     background-color: #000;
     color: #fff;
@@ -152,16 +240,22 @@
     margin-top: 10px;
 }
 
+
 .order-form button:hover {
     background-color: #333;
     transform: translateY(-2px);
 }
 
-/* Responsive */
+  .order-items label:hover {
+      border-color: #000;
+  }
+
+/* === Responsive Design === */
 @media (max-width: 600px) {
     #order {
         padding: 40px 10px;
     }
+
 
     .order-form input,
     .order-form select,
@@ -169,11 +263,17 @@
         width: 95%;
     }
 
-    .order-form label {
-        margin-left: 2%;
+
+    .outfit-items{
+        width: 95%;
+    }
+    .outfit-grid{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        width: 95%;
     }
 }
 
+  
 
  .cart-btn {
      position: relative;
