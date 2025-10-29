@@ -74,27 +74,36 @@
     <!-- ordersection -->
 <section id="order">
     <center><h2>Place Your Order</h2></center>
-    <form class="order-form" id="orderForm">
+    <form class="order-form" id="orderForm" onsubmit="event.preventDefault();">
         <label>Your Name</label>
         <input type="text" id="name" required>
 
-        <label>Select Outfit</label>
-        <select id="outfit">
-            <option>Elegant Ankara Dress</option>
-            <option>Men’s Smart Suit</option>
-            <option>Casual Two-Piece Set</option>
-        </select>
+        <label>Select Outfit(s)</label>
+        <div id="outfit-options" class="outfit-grid">
+            <div class="outfit-items">
+                    <input type="checkbox" id="outfit1" name="outfit" value="Elegant Ankara Dress">
+                    <label for="outfit1">Elegant Ankara Dress</label>
+                    <input type="checkbox" id="outfit2" name="outfit" value="Corset Gown">
+                    <label for="outfit2">Corset Gown</label>
+                    <input type="checkbox" id="outfit3" name="outfit" value="Ankara">
+                    <label for="outfit3">Casual Two-Piece Set</label>
+                    <input type="checkbox" id="outfit4" name="outfit" value="Bridal Gown">
+                    <label for="outfit4">Bridal Gown</label>
+                    <input type="checkbox" id="outfit5" name="outfit" value="Native Kaftan">
+                    <label for="outfit5">Native Kaftan</label>
+            </div>
+            
+                 
+        </div>
+       
+
 
         <label>Preferred Color</label>
         <input type="text" id="color" placeholder="e.g. wine red, navy blue" required>
 
-        <label>Size</label>
-        <select id="size">
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>x
-            <option>Custom Measurement</option>
-        </select>
+        <label>Size(s)</label>
+        <input type="text" id="size" placeholder="e.g. M, L, XL, XXl, custom" required>
+
 
         <label>Additional Notes</label>
         <textarea id="notes" rows="3" placeholder="e.g. I want it sleeveless with a short 
